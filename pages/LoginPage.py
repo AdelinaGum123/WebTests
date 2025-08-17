@@ -40,3 +40,6 @@ class LoginPageHelper(BasePage):
     def get_error_text(self):
         return self.find_element(LoginPageLocators.ERROR_TEXT).text
 
+    def send_keys_in_login_field(self, value: str):
+        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(value)
+
