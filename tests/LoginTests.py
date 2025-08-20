@@ -22,7 +22,7 @@ def test_error_login_and_password(browser):
 def test_error_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
-    LoginPage.send_keys_in_login_field('Login')
+    LoginPage.type_login('L')
     LoginPage.click_login()
     assert LoginPage.get_error_text() == EMPTY_PASSWORD_ERROR
 
