@@ -1,3 +1,5 @@
+import allure
+
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
@@ -34,12 +36,19 @@ class LoginPageHelper(BasePage):
         self.find_element(LoginPageLocators.SOCIAL_ICON_VK)
         self.find_element(LoginPageLocators.SOCIAL_ICON_YANDEX)
 
+
+    @allure.step('Клик по кнопке "Войти"')
     def click_login(self):
+        self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
 
+    @allure.step('Нахождение текста ошибки на экране')
     def get_error_text(self):
+        self.attach_screenshot()
         return self.find_element(LoginPageLocators.ERROR_TEXT).text
 
+    @allure.step('Ввод данных в инпут логина')
     def send_keys_in_login_field(self, value: str):
+        self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(value)
 
