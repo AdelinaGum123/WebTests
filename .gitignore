@@ -207,3 +207,17 @@ marimo/_lsp/
 __marimo__/
 .run/
 *.run.xml
+
+# Папки с отчетами
+/reports/
+/allure-results/
+/test-results/
+/output/
+
+# Скриншоты и видео
+/screenshots/
+/videos/
+
+# Папки зависимостей
+/.playwright/
+/.webdriver/
