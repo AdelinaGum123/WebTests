@@ -8,6 +8,8 @@ from pages.RegistarationPage import RegistrationPageHelper
 
 BASE_URL = 'https://ok.ru/'
 
+@allure.suite('Проверка страницы регистрации')
+@allure.title('Проверка подстановки верного кода страны')
 def test_registration_random_country(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
